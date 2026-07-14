@@ -1,0 +1,210 @@
+/* CatalogComp.module.css */
+
+.catalogContainer {
+  width: 100%;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+.itemsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+.catalogItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #ffffff;
+  width: 100%;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.catalogItem:hover {
+  transform: scale(1.02);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  border-radius: 4px;
+
+}
+
+.catalogItemPhoto {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+.hoverPhoto {
+  opacity: 0;
+}
+
+.hoverPhoto.visible {
+  opacity: 1;
+}
+
+.catalogItemPhoto.hidden {
+  opacity: 0;
+}
+
+.catalogItem:hover .catalogItemPhoto:not(.hoverPhoto) {
+  transform: scale(1.05);
+}
+
+.catalogItem:hover .hoverPhoto {
+  transform: scale(1.05);
+}
+
+/* ===== БЕЙДЖИ ===== */
+.badges {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 2;
+}
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  font-family: 'Montserrat', "Helvetica Neue", Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 3px;
+  color: #ffffff;
+}
+
+.badgeNew {
+  background: #000000;
+}
+
+.badgeSale {
+  background: #cc0000;
+}
+
+.badgeOutOfStock {
+  background: #888888;
+}
+
+/* ===== ИНФОРМАЦИЯ О ТОВАРЕ ===== */
+.catalogItemName {
+  font-family: 'Montserrat', "Helvetica Neue", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #000000;
+  margin-bottom: 6px;
+}
+
+.priceContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.catalogItemNewPrice {
+  font-family: 'Montserrat', "Helvetica Neue", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #000000;
+}
+
+.catalogItemOldPrice {
+  font-family: 'Montserrat', "Helvetica Neue", Arial, sans-serif;
+  font-size: 11px;
+  color: #888888;
+  text-decoration: line-through;
+}
+
+/* ===== EMPTY STATE ===== */
+.emptyState {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  font-family: 'Montserrat', "Helvetica Neue", Arial, sans-serif;
+}
+
+.emptyState p:first-child {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333333;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.emptyState p:last-child {
+  font-size: 13px;
+  color: #999999;
+  letter-spacing: 0.5px;
+}
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 1200px) {
+  .imageWrapper {
+    height: 400px;
+  }
+  
+  .itemsContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .imageWrapper {
+    height: 350px;
+  }
+  
+  .itemsContainer {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 500px) {
+  .imageWrapper {
+    height: 300px;
+  }
+  
+  .itemsContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .catalogItemName {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+  
+  .catalogItemNewPrice {
+    font-size: 10px;
+  }
+  
+  .catalogItemOldPrice {
+    font-size: 10px;
+  }
+  
+  .badge {
+    font-size: 7px;
+    padding: 2px 8px;
+  }
+}

@@ -1,0 +1,200 @@
+/* OrderForm.module.css */
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 20px;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: #ffffff;
+  color: #1e1e1e;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin: 0 0 4px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  color: #666;
+  margin-top: 4px;
+}
+
+.section {
+  margin-top: 32px;
+  border-top: 1px solid #e6e6e6;
+  padding-top: 24px;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 18px 0;
+}
+
+.deliveryOptions,
+.paymentOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 4px 0;
+}
+
+.radioLabel input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #000;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.radioText {
+  flex: 1;
+}
+
+.price {
+  color: #888;
+  font-size: 14px;
+  white-space: nowrap;
+  margin-left: auto;
+  padding-left: 12px;
+}
+
+/* Форма */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.fieldLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.input,
+.textarea {
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fafafa;
+  transition: border 0.2s;
+  font-family: inherit;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: #000;
+  background: #fff;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+/* Согласие */
+.agreement {
+  margin: 24px 0 20px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.checkboxLabel input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0 0;
+  accent-color: #000;
+  flex-shrink: 0;
+}
+
+.agreementText {
+  font-size: 13px;
+  color: #555;
+  margin: 6px 0 0 28px;
+  line-height: 1.4;
+}
+
+/* Кнопки */
+.actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.backButton,
+.submitButton {
+  margin-top: 30px;
+  padding: 12px 270px;
+  font-size: 25px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+  flex: 1 1 auto;
+  min-width: 140px;
+  background: #2a2a2a;
+color: #ccc;
+  
+}
+
+.backButton {
+  background: #f0f0f0;
+  color: #1e1e1e;
+}
+
+.backButton:hover {
+  background: #e0e0e0;
+}
+
+.continueButton {
+  background: #000;
+  color: #fff;
+}
+
+.submitButton:hover {
+  background: #434343;
+}
+
+/* Адаптив */
+@media (max-width: 480px) {
+  .container {
+    padding: 16px;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .actions {
+    flex-direction: column;
+  }
+  .backButton,
+  .continueButton {
+    width: 100%;
+    text-align: center;
+  }
+}

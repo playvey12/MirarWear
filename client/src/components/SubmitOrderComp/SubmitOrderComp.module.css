@@ -1,0 +1,46 @@
+.successContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: 'Montserrat', "Helvetica Neue", Arial, sans-serif;
+}
+
+.successTitle {
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  color: #000000;
+}
+
+.successMessage {
+  font-size: 12px;
+  color: #666666;
+  letter-spacing: 1px;
+  line-height: 1.6;
+  max-width: 400px;
+  margin-bottom: 32px;
+}
+
+.homeButton {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 12px 30px;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  text-decoration: none;
+}
+
+.homeButton:hover {
+  opacity: 0.8;
+}

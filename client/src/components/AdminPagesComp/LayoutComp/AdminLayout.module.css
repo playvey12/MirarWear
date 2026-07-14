@@ -1,0 +1,185 @@
+/* AdminLayout.module.css */
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ===== ЛЕВАЯ БОКОВАЯ ПАНЕЛЬ ===== */
+.sidebar {
+  width: 240px;
+  min-height: 100vh;
+  background-color: #ffffff;
+  border-right: 1px solid #e8e8e8;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 20px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.logo {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.logo span {
+  display: block;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1a1a1a;
+}
+
+.logo small {
+  display: block;
+  font-size: 11px;
+  color: #999999;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+  font-weight: 400;
+}
+
+/* ===== НАВИГАЦИЯ ===== */
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #666666;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.navLink svg {
+  flex-shrink: 0;
+  color: #999999;
+}
+
+.navLink:hover {
+  background-color: #f0f0f0;
+  color: #1a1a1a;
+}
+
+.navLink:hover svg {
+  color: #1a1a1a;
+}
+
+.navLink.active {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.navLink.active svg {
+  color: #ffffff;
+}
+
+/* ===== КНОПКА ВЫХОДА ===== */
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #999999;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  margin-top: auto;
+  border-top: 1px solid #e8e8e8;
+  padding-top: 20px;
+}
+
+.logoutBtn svg {
+  flex-shrink: 0;
+}
+
+.logoutBtn:hover {
+  color: #cc3333;
+  background-color: #fef0f0;
+}
+
+.logoutBtn:hover svg {
+  stroke: #cc3333;
+}
+
+/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
+.content {
+  flex: 1;
+  padding: 32px 40px 40px 40px;
+  overflow-y: auto;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 72px;
+    padding: 20px 12px;
+  }
+
+  .logo span {
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .logo small {
+    display: none;
+  }
+
+  .logo {
+    text-align: center;
+  }
+
+  .navLink {
+    justify-content: center;
+    padding: 12px;
+  }
+
+  .navLink span {
+    display: none;
+  }
+
+  .logoutBtn {
+    justify-content: center;
+    padding: 12px;
+  }
+
+  .logoutBtn span {
+    display: none;
+  }
+
+  .content {
+    padding: 20px 16px;
+  }
+}

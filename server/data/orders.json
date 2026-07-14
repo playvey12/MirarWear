@@ -1,0 +1,24 @@
+[
+  {
+    "customer": "Матвей Полуян",
+    "phone": "+375296354556",
+    "email": "matveipoluyana@gmail.com",
+    "address": "ул. Гамарника, 4, кв 50",
+    "comment": "",
+    "items": [
+      {
+        "name": "sdfs",
+        "size": "er",
+        "quantity": 1,
+        "price": 23
+      }
+    ],
+    "total": 23,
+    "delivery": "self",
+    "telegram": "",
+    "status": "new",
+    "id": "1001",
+    "date": "10.07.2026",
+    "guestId": "d31106b3-836d-4590-a1b9-f439146e52ae"
+  }
+]

@@ -1,0 +1,382 @@
+/* ProductsListPage.module.css */
+
+/* ===== ЗАГОЛОВОК СТРАНИЦЫ ===== */
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+
+.pageTitle {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.3px;
+}
+
+.pageSubtitle {
+  font-size: 14px;
+  color: #999999;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* ===== КНОПКА ДОБАВИТЬ ===== */
+.addBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  letter-spacing: 0.3px;
+}
+
+.addBtn:hover {
+  background-color: #333333;
+  transform: translateY(-1px);
+}
+
+/* ===== ТАБЛИЦА ===== */
+.tableWrapper {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e8e8e8;
+  overflow: auto;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 700px;
+}
+
+.table thead {
+  background: #f8f8f8;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.table th {
+  text-align: left;
+  padding: 14px 18px;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #666666;
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: middle;
+}
+
+.table tbody tr:hover {
+  background-color: #fafafa;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ===== ФОТО ТОВАРА ===== */
+.tableImage {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #e8e8e8;
+  display: block;
+}
+
+/* ===== НАЗВАНИЕ ===== */
+.productName {
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+/* ===== ЦЕНА ===== */
+.productPrice {
+  font-weight: 500;
+  color: #1a1a1a;
+  white-space: nowrap;
+}
+
+/* ===== РАЗМЕРЫ ===== */
+.sizesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.sizeTag {
+  display: inline-block;
+  padding: 2px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #666666;
+  background: #f0f0f0;
+  border-radius: 4px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+/* ===== СТАТУСЫ ===== */
+.statusBadge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.statusInStock {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.statusOutOfStock {
+  background: #fbe9e7;
+  color: #c62828;
+}
+
+/* ===== ДЕЙСТВИЯ ===== */
+.tableActions {
+  display: flex;
+  gap: 6px;
+}
+
+.editBtn,
+.deleteBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  color: #666666;
+}
+
+.editBtn:hover {
+  border-color: #1a1a1a;
+  background: #f5f5f5;
+  color: #1a1a1a;
+}
+
+.deleteBtn:hover {
+  border-color: #cc3333;
+  background: #fef0f0;
+  color: #cc3333;
+}
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 768px) {
+  .pageHeader {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .addBtn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .tableWrapper {
+    border-radius: 8px;
+  }
+
+  .table th,
+  .table td {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .tableImage {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .table th,
+  .table td {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .sizeTag {
+    font-size: 10px;
+    padding: 1px 8px;
+  }
+
+  .editBtn,
+  .deleteBtn {
+    width: 30px;
+    height: 30px;
+  }
+}
+/* ===== ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ===== */
+
+/* Обертка для фото с hover эффектом */
+.imageWrapper {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+}
+
+.tableImage {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #e8e8e8;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+/* Индикатор hover фото */
+.hoverIndicator {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+}
+
+.hoverBadge {
+  display: inline-block;
+  padding: 1px 6px;
+  background: #1a1a1a;
+  color: white;
+  font-size: 8px;
+  font-weight: 700;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Бейдж категории */
+.categoryBadge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: #f0f4f8;
+  color: #4a5568;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+/* Старая цена */
+.oldPrice {
+  display: block;
+  font-size: 11px;
+  color: #999;
+  text-decoration: line-through;
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+/* Контейнер для статусов */
+.statusContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+}
+
+/* Дополнительные статусы */
+.statusNew {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.statusSale {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+/* Улучшенный вид таблицы */
+.table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: middle;
+}
+
+.table td:first-child {
+  padding-left: 18px;
+}
+
+.table td:last-child {
+  padding-right: 18px;
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 768px) {
+  .table {
+    min-width: 500px;
+  }
+  
+  .table th,
+  .table td {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+  
+  .tableImage {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .imageWrapper {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .categoryBadge {
+    font-size: 10px;
+    padding: 2px 8px;
+  }
+  
+  .statusBadge {
+    font-size: 10px;
+    padding: 2px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .table th,
+  .table td {
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+  
+  .tableImage {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .imageWrapper {
+    width: 32px;
+    height: 32px;
+  }
+}

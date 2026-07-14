@@ -1,0 +1,176 @@
+  .menuContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 40px 12px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  /* Мобильная версия в оверлее */
+  .mobileMenu {
+    padding: 0;
+    height: 100%;
+    justify-content: flex-start;
+    padding-top: 40px;
+  }
+
+  .menuLogo {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700;
+    font-size: clamp(14px, 2vw, 22px);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    display: inline-block;
+    transform: scaleX(1.17);
+    transform-origin: center;
+    margin-bottom: 32px;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  .menuNav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .menuLink {
+    font-family: 'Montserrat', "Helvetica Neue", Arial, sans-serif;
+    font-size: clamp(9px, 1vw, 12px);
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #000000;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  .menuLink:hover {
+    opacity: 0.6;
+  }
+
+  /* Заголовок для мобильного меню */
+  .mobileMenuTitle {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 32px;
+    color: #000;
+    display: none;
+  }
+
+  /* Бургер-кнопка */
+  .burgerButton {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 28px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 100;
+    position: relative;
+  }
+
+  .burgerLine {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+  }
+
+  .burgerButton.active .burgerLine:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .burgerButton.active .burgerLine:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burgerButton.active .burgerLine:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Медиа-запрос для мобильных */
+  @media (max-width: 1000px) {
+    .menuContainer:not(.mobileMenu) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 24px;
+    }
+
+    .menuContainer:not(.mobileMenu) .menuLogo {
+      margin-bottom: 0;
+      font-size: clamp(16px, 3vw, 22px);
+      z-index: 101;
+    }
+
+    .burgerButton {
+      display: flex;
+    }
+
+    .menuNav {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: #ffffff;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      z-index: 99;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .menuNav.open {
+      display: flex;
+      opacity: 1;
+    }
+
+    .menuLink {
+      font-size: clamp(14px, 3vw, 18px);
+      letter-spacing: 3px;
+    }
+
+    /* Стили для мобильного меню в оверлее */
+    .mobileMenu {
+      height: auto;
+      min-height: 100%;
+    }
+
+    .mobileMenu .menuNav {
+      display: flex;
+      position: static;
+      opacity: 1;
+      height: auto;
+      gap: 28px;
+      padding-top: 20px;
+    }
+
+    .mobileMenu .burgerButton {
+      display: none;
+    }
+
+    .mobileMenuTitle {
+      display: block;
+    }
+  } 

@@ -1,0 +1,305 @@
+.container {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+  min-height: 100vh;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  text-align: center;
+  width: 100%;
+}
+
+.brandLogo {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.cartLink {
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.cartLink span {
+  margin-left: 8px;
+}
+
+.mainContent {
+  display: flex;
+  max-width: 1100px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+}
+
+.imageSection {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  max-width: 500px;
+}
+
+.productImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.infoSection {
+  flex: 1;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.productTitle {
+  font-size: 19px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin: 0 0 35px 0;
+  text-transform: uppercase;
+}
+
+.productDescription {
+  font-size: 11px;
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  margin-bottom: 25px;
+}
+
+.productDescription p {
+  margin: 0;
+}
+
+.descHighlight {
+  margin-top: 15px !important;
+}
+
+.sizeChartLink {
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  color: #000000;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  margin-bottom: 35px;
+  text-transform: uppercase;
+}
+
+.productPrice {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin-bottom: 30px;
+}
+
+.actionRow {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.selectWrapper {
+  position: relative;
+  flex: 1;
+}
+
+.sizeSelect {
+  width: 100%;
+  height: 42px;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  border-radius: 0;
+  padding: 0 30px 0 15px;
+  font-size: 14px;
+  font-family: inherit;
+  letter-spacing: 0.5px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.selectArrow {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%) scaleX(1.2);
+  font-size: 8px;
+  pointer-events: none;
+  color: #000000;
+}
+
+.addToCartBtn {
+  flex: 1;
+  height: 42px;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 0;
+  font-size: 13px;
+  font-family: inherit;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+  outline: none;
+}
+
+.addToCartBtn:hover {
+  background-color: #f5f5f5;
+}
+
+/* Адаптивная разметка */
+
+/* Контейнер для сетки миниатюр */
+.thumbsGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 45px);
+  gap: 12px 30px; 
+  margin-bottom: 25px; 
+}
+
+/* Кнопка-обертка для миниатюры (сбрасываем дефолтные стили кнопки) */
+.thumbButton {
+  background: none;
+  border: 1px solid transparent;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Эффект при ховере */
+.thumbButton:hover {
+  opacity: 0.8;
+}
+
+/* Стили для активной миниатюры (слегка выделяем рамкой, как в интерфейсах) */
+
+
+/* Сама маленькая картинка */
+.thumbImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Фото заполнит миниатюру без искажений */
+  display: block;
+}
+
+/* Темный фон за модалкой */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.gridTitle{
+   font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+}
+.brandLogo2{
+   font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+}
+/* Белая обёртка под фото */
+.modalContent {
+  background: #fff;
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 50px;
+}
+
+/* Кнопка закрытия */
+.closeModal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #000;
+  line-height: 1;
+
+}
+
+/* Сама фотка размерной сетки */
+.sizeGridImage {
+  max-width: 100%;
+  height: 70vh; /* Чтобы картинка не вылезала за пределы экрана по высоте */
+  object-fit: contain; /* Картинка пропорционально впишется в окно */
+  display: block;
+  padding: 30px 30px;
+}
+@media (max-width: 920px) {
+.productTitle{
+  font-size: 18px;
+  padding-top: 15px;
+}
+}
+@media (max-width: 830px) {
+  .mainContent {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+  }
+  
+  .imageSection, .infoSection {
+    max-width: 100%;
+  
+    justify-content: center;
+  }
+.productImage{
+  height: 600px;
+}
+  .infoSection {
+    align-items: center;
+    text-align: center;
+  }
+
+  .actionRow {
+    justify-content: center;
+  }
+}
+@media (max-width: 450px) {
+.thumbsGrid{
+  grid-template-columns: repeat(3, 45px);
+  
+}
+}
